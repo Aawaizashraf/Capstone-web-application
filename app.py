@@ -313,7 +313,7 @@ def submit_form():
         return result
     df = combine_num_df_cat_df(df_num, df_cat_encoded)
 
-    model = pickle.load(open('./Pickle Files/svc_model.pkl', 'rb'))
+    model = pickle.load(open('./Pickle Files/svc_gscv_model.pkl', 'rb'))
 
     # Predict on the train set
     pred = model.predict(df)
