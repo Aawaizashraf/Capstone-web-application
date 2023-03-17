@@ -1,0 +1,12 @@
+flask
+Flask
+sklearn
+pandas
+numpy
+matplotlib
+seaborn
+missingno
+category_encoders
+xgboost
+mlxtend
+keras
