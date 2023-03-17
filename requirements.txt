@@ -9,3 +9,4 @@ seaborn
 missingno
 category_encoders
 keras
+gunicorn
