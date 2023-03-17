@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Prediction</title>
+    <link rel="icon" href="../static/Nav-bar Icon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="bg-zinc-50">
+
+    <!-- Nav Bar Section -->
+
+    <header class="text-gray-600 body-font -my-8">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
+            <span class="ml-3 text-xl">Auto Insurance Fraud Prediction</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="/" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Home</a>
+            <a href="/about" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">About Data</a>
+            <a href="/overview" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Overview</a>
+            <a href="/visualizations" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Visualizations</a>
+            <a href="/prediction" id="nav-item-color" class="text-pink-900 mr-5 tracking-wide uppercase font-bold">Prediction</a>
+          </nav>
+          </button>
+        </div>
+      </header>
+
+      <hr>
+
+    <!-- Hero Section -->
+
+    
+
+      <!-- Attributes Section -->
+
+    <section class="text-gray-600 body-font relative">
+      <div class="container px-5 py-24 mx-auto">
+        <form action="{{ url_for('submit_form')}}"methods="post">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Prediction Form</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Welcome User! Please Enter your Name continue</p>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="p-2 w-100%">
+              <div class="relative">
+                <label for="Name" class="leading-7 text-sm text-gray-600">Name</label>
+                <input type="text" id="Name" name="Name" required="required" class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" min="1995" max="2015">
+              </div>
+            </div>
+          </div>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please enter attributes in the respective fields to get predictions.</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/4">
+              <div class="relative">
+                <label for="CustomerID" class="leading-7 text-sm text-gray-600">Customer ID</label>
+                <input type="text" id="CustomerID" name="CustomerID" value="Cust10008" class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/4">
+              <div class="relative">
+                <label for="InsuredAge" class="leading-7 text-sm text-gray-600">Age of the Insured</label>
+                <input type="number" id="InsuredAge" name="InsuredAge" value="27" class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/4">
+              <div class="relative">
+                <label for="InsuredZipCode" class="leading-7 text-sm text-gray-600">Zip Code of the Insured</label>
+                <input type="text" id="InsuredZipCode" name="InsuredZipCode" value="471704"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/4">
+              <div class="relative">
+                <label for="InsuredGender" class="leading-7 text-sm text-gray-600">Gender of the Insured</label>
+                <select id="InsuredGender" name="InsuredGender"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>MALE</option>
+                <option selected>FEMALE</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsuredEducationLevel" class="leading-7 text-sm text-gray-600">Education Level of the Insured</label>
+                <select id="InsuredEducationLevel" name="InsuredEducationLevel"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>JD</option>
+                <option selected>High School</option>
+                <option>MD</option>
+                <option>Masters</option>
+                <option>Associate</option>
+                <option>PhD</option>
+                <option>College</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsuredOccupation" class="leading-7 text-sm text-gray-600">Occupation of the Insured</label>
+                <select id="InsuredOccupation" name="InsuredOccupation"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>machine-op-inspct</option>
+                <option>exec-managerial</option>
+                <option>tech-support</option>
+                <option>prof-specialty</option>
+                <option>transport-moving</option>
+                <option>sales</option>
+                <option>craft-repair</option>
+                <option>priv-house-serv</option>
+                <option>armed-forces</option>
+                <option>farming-fishing</option>
+                <option>other-service</option>
+                <option>protective-serv</option>
+                <option selected>adm-clerical</option>
+                <option>handlers-cleaners</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsuredHobbies" class="leading-7 text-sm text-gray-600">Hobbies of the Insured</label>
+                <select id="InsuredHobbies" name="InsuredHobbies"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>cross-fit</option>
+                <option>chess</option>
+                <option>paintball</option>
+                <option>reading</option>
+                <option>board-games</option>
+                <option>bungie-jumping</option>
+                <option>yachting</option>
+                <option>polo</option>
+                <option selected>base-jumping</option>
+                <option>camping</option>
+                <option>exercise</option>
+                <option>video-games</option>
+                <option>movies</option>
+                <option>hiking</option>
+                <option>kayaking</option>
+                <option>golf</option>
+                <option>skydiving</option>
+                <option>dancing</option>
+                <option>basketball</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="CapitalGains" class="leading-7 text-sm text-gray-600">Capital Gains of the Insured</label>
+                <input type="number" id="CapitalGains" name="CapitalGains" value="56400"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="CapitalLoss" class="leading-7 text-sm text-gray-600">Capital Loss of the Insured</label>
+                <input type="number" id="CapitalLoss" name="CapitalLoss" value="-57000"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="Country" class="leading-7 text-sm text-gray-600">Country of the Insured</label>
+                <select id="Country" name="Country"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option selected>India</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsurancePolicyNumber" class="leading-7 text-sm text-gray-600">Policy Number of the Insured</label>
+                <input type="text" id="InsurancePolicyNumber" name="InsurancePolicyNumber" value="119129"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="CustomerLoyaltyPeriod" class="leading-7 text-sm text-gray-600">Loyalty Period of the Insured</label>
+                <input type="number" id="CustomerLoyaltyPeriod" name="CustomerLoyaltyPeriod" value="84"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="DateOfPolicyCoverage" class="leading-7 text-sm text-gray-600">Date of Policy Coverage</label>
+                <input type="date" id="DateOfPolicyCoverage" name="DateOfPolicyCoverage" value="1998-05-10"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsurancePolicyState" class="leading-7 text-sm text-gray-600">Policy State of the Insured</label>
+                <select id="InsurancePolicyState" name="InsurancePolicyState"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>State1</option>
+                <option selected>State2</option>
+                <option>State3</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-4/6">
+              <div class="relative">
+                <label for="Policy_CombinedSingleLimit" class="leading-7 text-sm text-gray-600">Combined Single Limit of the Insured</label>
+                <input type="text" id="Policy_CombinedSingleLimit" name="Policy_CombinedSingleLimit" value="500/100"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/3">
+              <div class="relative">
+                <label for="Policy_Deductible" class="leading-7 text-sm text-gray-600">Deductable Policy of the Insured</label>
+                <input type="number" id="Policy_Deductible" name="Policy_Deductible" value="2000"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/3">
+              <div class="relative">
+                <label for="PolicyAnnualPremium" class="leading-7 text-sm text-gray-600">Annual Premium of the Policy Holder</label>
+                <input type="number" id="PolicyAnnualPremium" name="PolicyAnnualPremium" value="1632.73"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/3">
+              <div class="relative">
+                <label for="UmbrellaLimit" class="leading-7 text-sm text-gray-600">Umbrella Limit of the Insured</label>
+                <input type="number" id="UmbrellaLimit" name="UmbrellaLimit" value="0"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="InsuredRelationship" class="leading-7 text-sm text-gray-600">Relationship of the Insured</label>
+                <select id="InsuredRelationship" name="InsuredRelationship"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>other-relative</option>
+                <option>not-in-family</option>
+                <option selected>own-child</option>
+                <option>husband</option>
+                <option>unmarried</option>
+                <option>wife</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="DateOfIncident" class="leading-7 text-sm text-gray-600">Date of the Incident</label>
+                <input type="date" id="DateOfIncident" name="DateOfIncident" value="2015-02-05"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="TypeOfIncident" class="leading-7 text-sm text-gray-600">Type of the Incident</label>
+                <select id="TypeOfIncident" name="TypeOfIncident"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option selected>Multi-vehicle Collision</option>
+                <option>Single Vehicle Collision</option>
+                <option selected>Vehicle Theft</option>
+                <option>Parked Car</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="TypeOfCollission" class="leading-7 text-sm text-gray-600">Type of Collision</label>
+                <select id="TypeOfCollission" name="TypeOfCollission"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>Rear Collision</option>
+                <option>Side Collision</option>
+                <option selected>Front Collision</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="SeverityOfIncident" class="leading-7 text-sm text-gray-600">Severity of the Incident</label>
+                <select id="SeverityOfIncident" name="SeverityOfIncident"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>Major Damage</option>
+                <option selected>Minor Damage</option>
+                <option>Total Loss</option>
+                <option>Trivial Damage</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="AuthoritiesContacted" class="leading-7 text-sm text-gray-600">Authorities Contacted</label>
+                <select id="AuthoritiesContacted" name="AuthoritiesContacted"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>Police</option>
+                <option>Fire</option>
+                <option>Other</option>
+                <option selected>Ambulance</option>
+                <option>None</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="IncidentState" class="leading-7 text-sm text-gray-600">State where incident occurred</label>
+                <select id="IncidentState" name="IncidentState"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>State7</option>
+                <option selected>State5</option>
+                <option>State9</option>
+                <option>State4</option>
+                <option>State8</option>
+                <option>State6</option>
+                <option>State3</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="IncidentCity" class="leading-7 text-sm text-gray-600">City where incident occurred</label>
+                <select id="IncidentCity" name="IncidentCity"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>City1</option>
+                <option selected>City2</option>
+                <option>City3</option>
+                <option>City4</option>
+                <option>City5</option>
+                <option>City6</option>
+                <option>City7</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="IncidentAddress" class="leading-7 text-sm text-gray-600">Location where incident occurred</label>
+                <input type="text" id="IncidentAddress" name="IncidentAddress" value="Location 1354"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="IncidentTime" class="leading-7 text-sm text-gray-600">Time when the incident took place</label>
+                <input type="number" id="IncidentTime" name="IncidentTime" value="4.0"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="NumberOfVehicles" class="leading-7 text-sm text-gray-600">Number of Vehicles with the Insured</label>
+                <input type="number" id="NumberOfVehicles" name="NumberOfVehicles" value="3"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="PropertyDamage" class="leading-7 text-sm text-gray-600">Damage to property incurred</label>
+                <select id="PropertyDamage" name="PropertyDamage"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>YES</option>
+                <option selected>NO</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="BodilyInjuries" class="leading-7 text-sm text-gray-600">Number of bodily injuries incurred</label>
+                <input type="number" id="BodilyInjuries" name="BodilyInjuries" value="0"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="Witnesses" class="leading-7 text-sm text-gray-600">Number of witnesses</label>
+                <input type="number" id="Witnesses" name="Witnesses" value="0"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="PoliceReport" class="leading-7 text-sm text-gray-600">Police Report Available</label>
+                <select id="PoliceReport" name="PoliceReport"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>YES</option>
+                <option selected>NO</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="AmountOfTotalClaim" class="leading-7 text-sm text-gray-600">Total amount of claim</label>
+                <input type="number" id="AmountOfTotalClaim" name="AmountOfTotalClaim" value="68354.0"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="AmountOfInjuryClaim" class="leading-7 text-sm text-gray-600">Amount of injury claim</label>
+                <input type="number" id="AmountOfInjuryClaim" name="AmountOfInjuryClaim" value="6835"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="AmountOfPropertyClaim" class="leading-7 text-sm text-gray-600">Amount of property claim</label>
+                <input type="number" id="AmountOfPropertyClaim" name="AmountOfPropertyClaim" value="8059"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="AmountOfVehicleDamage" class="leading-7 text-sm text-gray-600">Amount of vehicle damage claim</label>
+                <input type="number" id="AmountOfVehicleDamage" name="AmountOfVehicleDamage" value="53460"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="VehicleID" class="leading-7 text-sm text-gray-600">ID of the Insured Vehicle</label>
+                <input type="text" id="VehicleID" name="VehicleID" value="Vehicle34362"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-2/6">
+              <div class="relative">
+                <label for="VehicleMake" class="leading-7 text-sm text-gray-600">Make of the Vehicle</label>
+                <select id="VehicleMake" name="VehicleMake"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>BMW</option>
+                <option>Ford</option>
+                <option>Saab</option>
+                <option>Dodge</option>
+                <option>Suburu</option>
+                <option>Chevrolet</option>
+                <option>Nissan</option>
+                <option selected>Volkswagen</option>
+                <option>Audi</option>
+                <option>Toyota</option>
+                <option>Accura</option>
+                <option>Mercedes</option>
+                <option>Jeep</option>
+                <option>Honda</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-3/6">
+              <div class="relative">
+                <label for="VehicleModel" class="leading-7 text-sm text-gray-600">Model of the Vehicle</label>
+                <select id="VehicleModel" name="VehicleModel"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option>RAM</option>
+                <option>A3</option>
+                <option>Jetta</option>
+                <option>MDX</option>
+                <option>Wrangler</option>
+                <option selected>Passat</option>
+                <option>92x</option>
+                <option>F150</option>
+                <option>A5</option>
+                <option>Maxima</option>
+                <option>Grand Cherokee</option>
+                <option>Tahoe</option>
+                <option>Neon</option>
+                <option>Forrestor</option>
+                <option>Legacy</option>
+                <option>95</option>
+                <option>Pathfinder</option>
+                <option>X5</option>
+                <option>Highlander</option>
+                <option>Escape</option>
+                <option>Civic</option>
+                <option>Fusion</option>
+                <option>ML350</option>
+                <option>Silverado</option>
+                <option>Malibu</option>
+                <option>93</option>
+                <option>Camry</option>
+                <option>X6</option>
+                <option>M5</option>
+                <option>Ultima</option>
+                <option>E400</option>
+                <option>Impreza</option>
+                <option>TL</option>
+                <option>C300</option>
+                <option>Corolla</option>
+                <option>CRV</option>
+                <option>3 Series</option>
+                <option>RSX</option>
+                <option>Accord</option>
+                </select>
+              </div>
+            </div>
+            <div class="p-2 w-3/6">
+              <div class="relative">
+                <label for="VehicleYOM" class="leading-7 text-sm text-gray-600">Year of Make of the vehicle</label>
+                <input type="number" id="VehicleYOM" name="VehicleYOM" value="1995"   class="w-full bg-gray-100 bg-opacity-50 rounded border border-zinc-900 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" min="1995" max="2015">
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <button type="submit" formmethod="post" class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Predict</button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+
+      <!-- Footer Section -->
+
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
+            <hr>
+            <span class="ml-3 text-xl">Auto Insurance Fraud Detection</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Syed Aawaiz Ashraf —
+            <a href="https://github.com/Aawaizashraf" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Aawaizashraf</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

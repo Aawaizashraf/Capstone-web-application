@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Auto Insurance Fraud Prediction</title>
+    <link rel="icon" href="../static/Nav-bar Icon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="bg-zinc-50">
+
+    <!-- Nav Bar Section -->
+
+    <header class="text-gray-600 body-font -my-8">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
+            <span class="ml-3 text-xl">Auto Insurance Fraud Prediction</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="/" id="nav-item-color" class="text-pink-900 mr-5 tracking-wide uppercase font-bold">Home</a>
+            <a href="/about" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">About Data</a>
+            <a href="/overview" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Overview</a>
+            <a href="/visualizations" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Visualizations</a>
+            <a href="/prediction" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Prediction</a>
+          </nav>
+          </button>
+        </div>
+      </header>
+
+      <hr>
+
+    <!-- Hero Section -->
+
+    <section class="text-gray-600 body-font -my-8">
+      <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-left">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Auto Insurance Fraud Detection
+            <br class="hidden lg:inline-block">A Machine Learning Project
+          </h1>
+          <p class="mb-8 leading-relaxed">The problem statement revolves around the detection of fraud in auto insurance claims, which is a critical issue faced by many general insurance companies. The fraudulent claims not only result in significant leakages for the insurer but also affect innocent people's lives. The insurance frauds can be classified based on their sources, including policyholders, intermediaries, and internal factors, and their nature, such as application, inflation, identity, fabrication, and staged accidents. Detecting and preventing frauds in auto insurance claims require a robust analytical and modelling framework that can predict the likelihood of fraud before processing the claims. The framework should also be capable of identifying the hidden patterns in the data that lead to fraudulent claims.</p>
+          <p class="mb-8 leading-relaxed">We are expected to perform exploratory data analysis, report the results from learning curves, build an analytical framework to predict fraud, and extract the top 20 patterns for fraudulent claims using decision tree algorithms only. This analytical and modelling framework can benefit not only the insurance companies but also the regulatory bodies and law enforcement agencies.</p>
+          <p class="mb-8 leading-relaxed font-bold">Objectives:</p>
+          <div class="flex justify-left">
+            <ul class="list-none">
+              <li>To perform exploratory Data Analysis using visualizations.</li>
+              <li>To report the results/observations from learning curves.</li>
+              <li>To build the analytical framework to predict if a claim is fraudulent or not.</li>
+              <li>Finding Missing Data.</li>
+              <li>To extract the top 20 patterns for fraudulent claims using Decision Tree Algorithm.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <img class="object-cover object-center rounded" alt="hero" src="../static/Auto-Car-Insurance-Transparent-File.png">
+        </div>
+      </div>
+    </section>
+
+      <!-- Attributes Section -->
+
+      
+
+      <!-- Footer Section -->
+
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
+            <span class="ml-3 text-xl">Auto Insurance Fraud Detection</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Syed Aawaiz Ashraf —
+            <a href="https://github.com/Aawaizashraf" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Aawaizashraf</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
