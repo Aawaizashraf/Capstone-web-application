@@ -332,5 +332,13 @@ def steps():
 def visualizations():
     return render_template('visuals.html')
 
+@app.route('/code')
+def code():
+    return render_template('code.html')
+
+@app.route('/presentation')
+def presentation():
+    return render_template('presentation.html')
+
 if __name__=="__main__":
     app.run(debug = True)

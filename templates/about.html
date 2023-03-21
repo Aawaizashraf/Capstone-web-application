@@ -11,27 +11,30 @@
     <title>About Data</title>
     <link rel="icon" href="../static/Nav-bar Icon.png">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
   </head>
   <body class="bg-zinc-50">
 
     <!-- Nav Bar Section -->
 
     <header class="text-gray-600 body-font -my-8">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
-            <span class="ml-3 text-xl">Auto Insurance Fraud Prediction</span>
-          </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a href="/" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Home</a>
-            <a href="/about" id="nav-item-color" class="text-pink-900 mr-5 tracking-wide uppercase font-bold">About Data</a>
-            <a href="/overview" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Overview</a>
-            <a href="/visualizations" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Visualizations</a>
-            <a href="/prediction" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Prediction</a>
-          </nav>
-          </button>
-        </div>
-      </header>
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <img class="object-cover object-center rounded" alt="icon" src="../static/Nav-bar Icon.png">
+          <span class="ml-3 text-xl">Auto Insurance Fraud Prediction</span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a href="/" id="nav-item-color" class="mr-5 tracking-wide uppercase hover:font-bold">Home</a>
+          <a href="/presentation" id="nav-item-color" class="mr-5 tracking-wide text-pink-900 uppercase hover:font-bold">Presentation</a>
+          <a href="/about" id="nav-item-color" class="mr-5 tracking-wide uppercase font-bold">About Data</a>
+          <a href="/overview" id="nav-item-color" class="mr-5 tracking-wide uppercase hover:font-bold">Overview</a>
+          <a href="/visualizations" id="nav-item-color" class="mr-5 tracking-wide uppercase hover:font-bold">Visualizations</a>
+          <a href="/prediction" id="nav-item-color" class="mr-5 tracking-wide uppercase hover:font-bold">Prediction</a>
+          <a href="/code" id="nav-item-color" class="mr-5 tracking-wide uppercase hover:font-bold">Code</a>
+        </nav>
+        </button>
+      </div>
+    </header>
 
       <hr>
 
@@ -41,7 +44,22 @@
 
       <!-- Attributes Section -->
 
-      <section class="text-gray-600 body-font overflow-hidden">
+      <section class="text-gray-600 body-font -my-12">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-left">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">About Data
+            </h1>
+            <p class="mb-8 leading-relaxed">Welcome to our insurance data analysis platform, where we provide comprehensive insights into various aspects of insurance data. Our platform analyzes multiple datasets that include demographic data, policy information, claim data, vehicle data, and fraud data.</p>
+            <p class="mb-8 leading-relaxed">The demographic data includes information such as customer ID, country, insured age, gender, and education level. This data provides insights into the customer base of the insurance company and helps in making informed decisions regarding insurance policies.</p>
+            <p class="mb-8 leading-relaxed">The policy information dataset includes data such as customer ID, insurance policy number, date of policy coverage, policy state, and umbrella limit. This data helps in understanding the policies offered by the insurance company and the coverage provided.</p>
+            <p class="mb-8 leading-relaxed">The claim data contains information about the insurance claims made by customers, such as the date of the incident, type of incident, amount of injury claim, and amount of property claim. This data is critical in understanding the types of claims made and their frequency.</p>
+            <p class="mb-8 leading-relaxed">The vehicle data includes details about the vehicle connected to the policy, such as the make, model, year, and value. This data provides insights into the types of vehicles that are insured by the company and their value.</p>
+            <p class="mb-8 leading-relaxed">Finally, the fraud data provides information about reported fraud cases by customers, including customer ID and reported fraud. This data is critical in identifying potential fraudulent activities and taking corrective actions to prevent them.</p>
+            <p class="mb-8 leading-relaxed">Our platform uses advanced analytical techniques to derive insights from these datasets and provide valuable information to insurance companies. With our platform, insurance companies can make informed decisions regarding policy coverage, claims processing, and fraud prevention, ultimately leading to better customer satisfaction and improved business performance.</p>
+        </div>
+      </section>
+
+      <section class="text-gray-600 body-font overflow-hidden -my-8">
         <div class="container px-5 py-24 mx-auto">
           <div class="-my-8 divide-y-2 divide-gray-100">
             <div class="py-8 flex flex-wrap md:flex-nowrap">
