@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'auto-fraud'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A7606FAD8C304B058A69631D7E3E3AC9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_94745D007EB542FCA6F226B4185965D5 }}
