@@ -341,4 +341,4 @@ def presentation():
     return render_template('presentation.html')
 
 if __name__=="__main__":
-    app.run(debug = True)
+    app.run()
